@@ -18,3 +18,34 @@
 	<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
 	<li><code>-10<sup>7</sup> &lt;= k &lt;= 10<sup>7</sup></code></li>
 </ul>
+
+
+// Prefix Sum Concept:
+//
+// Let:
+// currentSum = sum of elements from index 0 to i.
+//
+// We need a subarray whose sum is k.
+//
+// Formula:
+// subarraySum = currentSum - previousPrefixSum
+//
+// Therefore,
+// currentSum - previousPrefixSum = k
+//
+// Rearranging,
+// previousPrefixSum = currentSum - k
+//
+// So, if (currentSum - k) has already appeared as a prefix sum,
+// then every occurrence of that prefix sum forms a valid subarray
+// ending at the current index.
+//
+// HashMap stores:
+// Key   -> Prefix Sum
+// Value -> Frequency of that Prefix Sum
+//
+// Frequency is stored because the same prefix sum may occur multiple
+// times, and each occurrence represents a different valid starting point.
+//
+// Initializing map with (0 -> 1) represents an empty prefix before
+// the array starts, allowing us to count subarrays that begin at index 0.
