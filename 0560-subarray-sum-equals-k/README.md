@@ -1,51 +1,159 @@
-<h2><a href="https://leetcode.com/problems/subarray-sum-equals-k">560. Subarray Sum Equals K</a></h2><h3>Medium</h3><hr><p>Given an array of integers <code>nums</code> and an integer <code>k</code>, return <em>the total number of subarrays whose sum equals to</em> <code>k</code>.</p>
+# 560. Subarray Sum Equals K
 
-<p>A subarray is a contiguous <strong>non-empty</strong> sequence of elements within an array.</p>
+**Difficulty:** Medium
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<pre><strong>Input:</strong> nums = [1,1,1], k = 2
-<strong>Output:</strong> 2
-</pre><p><strong class="example">Example 2:</strong></p>
-<pre><strong>Input:</strong> nums = [1,2,3], k = 3
-<strong>Output:</strong> 2
-</pre>
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+## Problem Statement
 
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 2 * 10<sup>4</sup></code></li>
-	<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
-	<li><code>-10<sup>7</sup> &lt;= k &lt;= 10<sup>7</sup></code></li>
-</ul>
+Given an integer array `nums` and an integer `k`, return the **total number of contiguous subarrays** whose sum is exactly equal to `k`.
 
+A **subarray** is a contiguous, non-empty sequence of elements within an array.
 
-// Prefix Sum Concept:
-//
-// Let:
-// currentSum = sum of elements from index 0 to i.
-//
-// We need a subarray whose sum is k.
-//
-// Formula:
-// subarraySum = currentSum - previousPrefixSum
-//
-// Therefore,
-// currentSum - previousPrefixSum = k
-//
-// Rearranging,
-// previousPrefixSum = currentSum - k
-//
-// So, if (currentSum - k) has already appeared as a prefix sum,
-// then every occurrence of that prefix sum forms a valid subarray
-// ending at the current index.
-//
-// HashMap stores:
-// Key   -> Prefix Sum
-// Value -> Frequency of that Prefix Sum
-//
-// Frequency is stored because the same prefix sum may occur multiple
-// times, and each occurrence represents a different valid starting point.
-//
-// Initializing map with (0 -> 1) represents an empty prefix before
-// the array starts, allowing us to count subarrays that begin at index 0.
+### Example 1
+
+```text
+Input:
+nums = [1,1,1]
+k = 2
+
+Output:
+2
+```
+
+### Example 2
+
+```text
+Input:
+nums = [1,2,3]
+k = 3
+
+Output:
+2
+```
+
+---
+
+# Approach: Prefix Sum + HashMap
+
+## Key Observation
+
+Instead of calculating the sum of every possible subarray (which takes **O(n²)** time), we maintain a **running (prefix) sum** while traversing the array only once.
+
+Let,
+
+```text
+currentPrefixSum = Sum of elements from index 0 to i
+```
+
+Suppose the sum of a subarray ending at the current index is `k`.
+
+Then,
+
+```text
+Subarray Sum = Current Prefix Sum − Previous Prefix Sum
+```
+
+Therefore,
+
+```text
+Current Prefix Sum − Previous Prefix Sum = k
+```
+
+Rearranging,
+
+```text
+Previous Prefix Sum = Current Prefix Sum − k
+```
+
+This means that at every index, if a prefix sum equal to:
+
+```text
+currentPrefixSum - k
+```
+
+has already been encountered, then a valid subarray ending at the current index exists.
+
+---
+
+# Why HashMap?
+
+A `HashMap` is used to efficiently store previously encountered prefix sums.
+
+```text
+Key   → Prefix Sum
+Value → Frequency of the Prefix Sum
+```
+
+We store the **frequency** instead of just the index because the same prefix sum can occur multiple times.
+
+Each occurrence represents a different starting position for a valid subarray.
+
+---
+
+# Why Initialize with `0 → 1`?
+
+Before processing any element, we insert:
+
+```text
+0 → 1
+```
+
+This represents an **empty prefix** before the array begins.
+
+It allows us to correctly count subarrays that start from index `0`.
+
+For example,
+
+```text
+nums = [3]
+k = 3
+```
+
+When the current prefix sum becomes `3`,
+
+```text
+currentPrefixSum - k = 0
+```
+
+Since `0` already exists in the map, the subarray `[3]` is counted correctly.
+
+---
+
+# Algorithm
+
+1. Initialize a running prefix sum as `0`.
+2. Store `(0 → 1)` in the HashMap.
+3. Traverse the array.
+4. Update the current prefix sum.
+5. Compute `currentPrefixSum - k`.
+6. If this value exists in the HashMap, add its frequency to the answer.
+7. Store/update the current prefix sum in the HashMap.
+8. Return the total count of valid subarrays.
+
+---
+
+# Complexity Analysis
+
+| Complexity |    Value |
+| ---------- | -------: |
+| Time       | **O(n)** |
+| Space      | **O(n)** |
+
+---
+
+# Key Takeaways
+
+* Prefix Sum helps compute subarray sums efficiently.
+* The identity
+
+```text
+Current Prefix Sum − Previous Prefix Sum = k
+```
+
+is the foundation of the solution.
+
+* A `HashMap` enables constant-time lookup of previous prefix sums.
+* Storing **frequencies** ensures all valid subarrays are counted, even when the same prefix sum appears multiple times.
+* Initializing the map with `(0 → 1)` correctly handles subarrays starting from index `0`.
+
+> **Pattern to Remember:**
+> Whenever a problem asks for the **number of subarrays with a target sum**, especially when the array may contain **negative numbers**, think **Prefix Sum + HashMap**.
