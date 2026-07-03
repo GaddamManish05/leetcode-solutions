@@ -1,84 +1,99 @@
-<h2><a href="https://leetcode.com/problems/baseball-game">682. Baseball Game</a></h2><h3>Easy</h3><hr><p>You are keeping the scores for a baseball game with strange rules. At the beginning of the game, you start with an empty record.</p>
+# 682. Baseball Game
 
-<p>You are given a list of strings <code>operations</code>, where <code>operations[i]</code> is the <code>i<sup>th</sup></code> operation you must apply to the record and is one of the following:</p>
+## Intuition
 
-<ul>
-	<li>An integer <code>x</code>.
+The problem asks us to maintain a history of valid scores while processing operations one by one.
 
-	<ul>
-		<li>Record a new score of <code>x</code>.</li>
-	</ul>
-	</li>
-	<li><code>&#39;+&#39;</code>.
-	<ul>
-		<li>Record a new score that is the sum of the previous two scores.</li>
-	</ul>
-	</li>
-	<li><code>&#39;D&#39;</code>.
-	<ul>
-		<li>Record a new score that is the double of the previous score.</li>
-	</ul>
-	</li>
-	<li><code>&#39;C&#39;</code>.
-	<ul>
-		<li>Invalidate the previous score, removing it from the record.</li>
-	</ul>
-	</li>
-</ul>
+Since every operation only depends on the **most recent scores**, a **Stack** is the perfect data structure.
 
-<p>Return <em>the sum of all the scores on the record after applying all the operations</em>.</p>
+---
 
-<p>The test cases are generated such that the answer and all intermediate calculations fit in a <strong>32-bit</strong> integer and that all operations are valid.</p>
+## Approach
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+* Create a `Stack<Integer>` to store valid scores.
+* Traverse every operation:
 
-<pre>
-<strong>Input:</strong> ops = [&quot;5&quot;,&quot;2&quot;,&quot;C&quot;,&quot;D&quot;,&quot;+&quot;]
-<strong>Output:</strong> 30
-<strong>Explanation:</strong>
-&quot;5&quot; - Add 5 to the record, record is now [5].
-&quot;2&quot; - Add 2 to the record, record is now [5, 2].
-&quot;C&quot; - Invalidate and remove the previous score, record is now [5].
-&quot;D&quot; - Add 2 * 5 = 10 to the record, record is now [5, 10].
-&quot;+&quot; - Add 5 + 10 = 15 to the record, record is now [5, 10, 15].
-The total sum is 5 + 10 + 15 = 30.
-</pre>
+  * **Integer**
 
-<p><strong class="example">Example 2:</strong></p>
+    * Convert it using `Integer.parseInt()`.
+    * Push it into the stack.
+  * **"C"**
 
-<pre>
-<strong>Input:</strong> ops = [&quot;5&quot;,&quot;-2&quot;,&quot;4&quot;,&quot;C&quot;,&quot;D&quot;,&quot;9&quot;,&quot;+&quot;,&quot;+&quot;]
-<strong>Output:</strong> 27
-<strong>Explanation:</strong>
-&quot;5&quot; - Add 5 to the record, record is now [5].
-&quot;-2&quot; - Add -2 to the record, record is now [5, -2].
-&quot;4&quot; - Add 4 to the record, record is now [5, -2, 4].
-&quot;C&quot; - Invalidate and remove the previous score, record is now [5, -2].
-&quot;D&quot; - Add 2 * -2 = -4 to the record, record is now [5, -2, -4].
-&quot;9&quot; - Add 9 to the record, record is now [5, -2, -4, 9].
-&quot;+&quot; - Add -4 + 9 = 5 to the record, record is now [5, -2, -4, 9, 5].
-&quot;+&quot; - Add 9 + 5 = 14 to the record, record is now [5, -2, -4, 9, 5, 14].
-The total sum is 5 + -2 + -4 + 9 + 5 + 14 = 27.
-</pre>
+    * Remove the previous valid score using `pop()`.
+  * **"D"**
 
-<p><strong class="example">Example 3:</strong></p>
+    * Double the previous score using `peek() * 2` and push it.
+  * **"+"**
 
-<pre>
-<strong>Input:</strong> ops = [&quot;1&quot;,&quot;C&quot;]
-<strong>Output:</strong> 0
-<strong>Explanation:</strong>
-&quot;1&quot; - Add 1 to the record, record is now [1].
-&quot;C&quot; - Invalidate and remove the previous score, record is now [].
-Since the record is empty, the total sum is 0.
-</pre>
+    * Need the sum of the last two scores.
+    * Pop the top score (`val1`).
+    * Peek the second score (`val2`).
+    * Push `val1` back (to restore the stack).
+    * Push `val1 + val2`.
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+After processing all operations, pop every element from the stack and add them to get the final answer.
 
-<ul>
-	<li><code>1 &lt;= operations.length &lt;= 1000</code></li>
-	<li><code>operations[i]</code> is <code>&quot;C&quot;</code>, <code>&quot;D&quot;</code>, <code>&quot;+&quot;</code>, or a string representing an integer in the range <code>[-3 * 10<sup>4</sup>, 3 * 10<sup>4</sup>]</code>.</li>
-	<li>For operation <code>&quot;+&quot;</code>, there will always be at least two previous scores on the record.</li>
-	<li>For operations <code>&quot;C&quot;</code> and <code>&quot;D&quot;</code>, there will always be at least one previous score on the record.</li>
-</ul>
+---
+
+## Why Stack?
+
+A stack naturally supports:
+
+* Accessing the latest score (`peek()`).
+* Removing the latest score (`pop()`).
+* Adding a new score (`push()`).
+
+Since every operation works on the most recent records, Stack is the ideal choice.
+
+---
+
+## Key Observation
+
+For the `"+"` operation:
+
+```text
+Stack:
+[5, 10]
+
+val1 = pop() -> 10
+val2 = peek() -> 5
+
+push(10)        // restore
+push(15)        // new score
+
+Final:
+[5, 10, 15]
+```
+
+The temporary `pop()` is only to access the second last score.
+
+---
+
+## Time Complexity
+
+* Processing operations: **O(n)**
+* Calculating final sum: **O(n)**
+
+Overall: **O(n)**
+
+---
+
+## Space Complexity
+
+* Stack stores at most all scores.
+
+**O(n)**
+
+---
+
+## Pattern Learned
+
+> **Whenever a problem requires repeatedly accessing, removing, or updating the most recent elements, think of using a Stack.**
+
+Common Stack operations:
+
+* Previous element
+* Undo operation
+* Remove last
+* Double last
+* Sum of last two
