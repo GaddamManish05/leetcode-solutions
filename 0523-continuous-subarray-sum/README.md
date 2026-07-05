@@ -1,50 +1,153 @@
-<h2><a href="https://leetcode.com/problems/continuous-subarray-sum">523. Continuous Subarray Sum</a></h2><h3>Medium</h3><hr><p>Given an integer array nums and an integer k, return <code>true</code> <em>if </em><code>nums</code><em> has a <strong>good subarray</strong> or </em><code>false</code><em> otherwise</em>.</p>
+# 523. Continuous Subarray Sum
 
-<p>A <strong>good subarray</strong> is a subarray where:</p>
+## Approach: Prefix Sum + HashMap
 
-<ul>
-	<li>its length is <strong>at least two</strong>, and</li>
-	<li>the sum of the elements of the subarray is a multiple of <code>k</code>.</li>
-</ul>
+### Intuition
 
-<p><strong>Note</strong> that:</p>
+A subarray sum from index `i + 1` to `j` is:
 
-<ul>
-	<li>A <strong>subarray</strong> is a contiguous part of the array.</li>
-	<li>An integer <code>x</code> is a multiple of <code>k</code> if there exists an integer <code>n</code> such that <code>x = n * k</code>. <code>0</code> is <strong>always</strong> a multiple of <code>k</code>.</li>
-</ul>
+```
+prefixSum[j] - prefixSum[i]
+```
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+For this subarray to be a multiple of `k`:
 
-<pre>
-<strong>Input:</strong> nums = [23,<u>2,4</u>,6,7], k = 6
-<strong>Output:</strong> true
-<strong>Explanation:</strong> [2, 4] is a continuous subarray of size 2 whose elements sum up to 6.
-</pre>
+```
+(prefixSum[j] - prefixSum[i]) % k == 0
+```
 
-<p><strong class="example">Example 2:</strong></p>
+This can be rewritten as:
 
-<pre>
-<strong>Input:</strong> nums = [<u>23,2,6,4,7</u>], k = 6
-<strong>Output:</strong> true
-<strong>Explanation:</strong> [23, 2, 6, 4, 7] is an continuous subarray of size 5 whose elements sum up to 42.
-42 is a multiple of 6 because 42 = 7 * 6 and 7 is an integer.
-</pre>
+```
+prefixSum[j] % k == prefixSum[i] % k
+```
 
-<p><strong class="example">Example 3:</strong></p>
+This means if two prefix sums have the **same remainder when divided by `k`**, then the sum of the elements between them is divisible by `k`.
 
-<pre>
-<strong>Input:</strong> nums = [23,2,6,4,7], k = 13
-<strong>Output:</strong> false
-</pre>
+Therefore, while traversing the array:
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+- Compute the running prefix sum.
+- Compute `remainder = prefixSum % k`.
+- Store the **first occurrence** of every remainder in a `HashMap`.
+- If the same remainder appears again and the distance between the two indices is at least `2`, then a valid subarray exists.
 
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>0 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
-	<li><code>0 &lt;= sum(nums[i]) &lt;= 2<sup>31</sup> - 1</code></li>
-	<li><code>1 &lt;= k &lt;= 2<sup>31</sup> - 1</code></li>
-</ul>
+We initialize the map with:
+
+```
+0 -> -1
+```
+
+This handles cases where the subarray starting from index `0` itself has a sum divisible by `k`.
+
+---
+
+## Algorithm
+
+1. Create a `HashMap` to store `(remainder, first index)`.
+2. Insert `(0, -1)` into the map.
+3. Traverse the array while maintaining the prefix sum.
+4. Compute:
+
+   ```
+   remainder = prefixSum % k
+   ```
+
+5. If the remainder already exists:
+   - Check whether the subarray length is at least `2`.
+   - If yes, return `true`.
+6. Otherwise, store the remainder with its current index.
+7. If no valid subarray is found, return `false`.
+
+---
+
+## Dry Run
+
+**Input**
+
+```
+nums = [23, 2, 4, 6, 7]
+k = 6
+```
+
+| Index | Number | Prefix Sum | Remainder | HashMap | Result |
+|------:|--------:|-----------:|----------:|:--------|:------|
+| -1 | - | 0 | 0 | {0:-1} | Initialization |
+| 0 | 23 | 23 | 5 | {0:-1, 5:0} | Store |
+| 1 | 2 | 25 | 1 | {0:-1, 5:0, 1:1} | Store |
+| 2 | 4 | 29 | 5 | remainder already exists at index 0 | Length = 2 → **Return true** |
+
+Subarray:
+
+```
+[2, 4]
+```
+
+Sum:
+
+```
+2 + 4 = 6
+```
+
+which is divisible by `6`.
+
+---
+
+## Correctness
+
+If two prefix sums produce the same remainder when divided by `k`, then their difference is divisible by `k`.
+
+Suppose:
+
+```
+prefixSum1 % k = r
+prefixSum2 % k = r
+```
+
+Then,
+
+```
+(prefixSum2 - prefixSum1) % k = 0
+```
+
+Hence, the subarray between these two prefix sums has a sum that is a multiple of `k`.
+
+Since we store the **first occurrence** of every remainder, we maximize the possible subarray length and correctly detect any valid subarray of length at least `2`.
+
+---
+
+## Complexity Analysis
+
+- **Time Complexity:** `O(n)`
+- **Space Complexity:** `O(min(n, k))` (or `O(n)` in the worst case)
+
+---
+
+## Java Code
+
+```java
+class Solution {
+    public boolean checkSubarraySum(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        map.put(0, -1);
+
+        int sum = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+
+            int remainder = sum % k;
+
+            if (map.containsKey(remainder)) {
+                if (i - map.get(remainder) >= 2) {
+                    return true;
+                }
+            } else {
+                map.put(remainder, i);
+            }
+        }
+
+        return false;
+    }
+}
+```
