@@ -2,98 +2,184 @@
 
 ## Intuition
 
-The problem asks us to maintain a history of valid scores while processing operations one by one.
+The problem requires maintaining a record of valid scores while processing each operation sequentially.
 
-Since every operation only depends on the **most recent scores**, a **Stack** is the perfect data structure.
+Since every operation depends only on the **most recent valid scores**, a **Stack** is the ideal data structure.
+
+- A new score is added to the top.
+- The previous score can be removed.
+- The last score can be doubled.
+- The last two scores can be accessed to calculate their sum.
 
 ---
 
 ## Approach
 
-* Create a `Stack<Integer>` to store valid scores.
-* Traverse every operation:
+1. Create a `Stack<Integer>` to store all valid scores.
+2. Traverse each operation in the given array.
 
-  * **Integer**
+### Case 1: Integer Score
 
-    * Convert it using `Integer.parseInt()`.
-    * Push it into the stack.
-  * **"C"**
+- Convert the string into an integer using `Integer.parseInt()`.
+- Push it onto the stack.
 
-    * Remove the previous valid score using `pop()`.
-  * **"D"**
-
-    * Double the previous score using `peek() * 2` and push it.
-  * **"+"**
-
-    * Need the sum of the last two scores.
-    * Pop the top score (`val1`).
-    * Peek the second score (`val2`).
-    * Push `val1` back (to restore the stack).
-    * Push `val1 + val2`.
-
-After processing all operations, pop every element from the stack and add them to get the final answer.
+```java
+stack.push(Integer.parseInt(str));
+```
 
 ---
 
-## Why Stack?
+### Case 2: `"C"`
 
-A stack naturally supports:
+- Remove the previous valid score.
 
-* Accessing the latest score (`peek()`).
-* Removing the latest score (`pop()`).
-* Adding a new score (`push()`).
-
-Since every operation works on the most recent records, Stack is the ideal choice.
+```java
+stack.pop();
+```
 
 ---
 
-## Key Observation
+### Case 3: `"D"`
 
-For the `"+"` operation:
+- Double the previous valid score and push it.
 
-```text
-Stack:
-[5, 10]
+```java
+stack.push(2 * stack.peek());
+```
 
-val1 = pop() -> 10
-val2 = peek() -> 5
+---
 
-push(10)        // restore
-push(15)        // new score
+### Case 4: `"+"`
 
-Final:
+The new score is the sum of the previous two valid scores.
+
+Steps:
+
+1. Pop the top element (`val1`).
+2. Peek the second last element (`val2`).
+3. Push `val1` back to restore the stack.
+4. Push `val1 + val2` as the new score.
+
+```java
+int val1 = stack.pop();
+int val2 = stack.peek();
+
+stack.push(val1);
+stack.push(val1 + val2);
+```
+
+After processing all operations, pop every score from the stack and add them to compute the final answer.
+
+---
+
+## Dry Run
+
+### Input
+
+```
+operations = ["5","2","C","D","+"]
+```
+
+| Operation | Stack | Explanation |
+|-----------|-------|-------------|
+| `"5"` | `[5]` | Push 5 |
+| `"2"` | `[5, 2]` | Push 2 |
+| `"C"` | `[5]` | Remove 2 |
+| `"D"` | `[5, 10]` | Double 5 |
+| `"+"` | `[5, 10, 15]` | 10 + 5 = 15 |
+
+Final Stack:
+
+```
 [5, 10, 15]
 ```
 
-The temporary `pop()` is only to access the second last score.
+Sum:
+
+```
+5 + 10 + 15 = 30
+```
+
+Return:
+
+```
+30
+```
 
 ---
 
-## Time Complexity
+## Correctness
 
-* Processing operations: **O(n)**
-* Calculating final sum: **O(n)**
+The stack always stores the valid scores in the order they were recorded.
 
-Overall: **O(n)**
+- **Integer** → Adds a new valid score.
+- **"C"** → Removes the latest valid score.
+- **"D"** → Uses the latest score to generate a new valid score.
+- **"+"** → Uses the latest two valid scores to generate a new score while preserving the existing scores.
+
+Since every operation updates the stack exactly according to the problem statement, the stack contains all valid scores after processing every operation.
+
+Finally, summing all elements in the stack produces the required answer.
+
+---
+
+## Complexity Analysis
+
+- **Time Complexity:** `O(n)`
+  - Processing each operation: `O(n)`
+  - Summing all scores: `O(n)`
+
+- **Space Complexity:** `O(n)`
+  - In the worst case, the stack stores all valid scores.
 
 ---
 
-## Space Complexity
+## Java Code
 
-* Stack stores at most all scores.
+```java
+class Solution {
+    public int calPoints(String[] operations) {
+        Stack<Integer> stack = new Stack<>();
 
-**O(n)**
+        for (String str : operations) {
+            if (str.equals("+")) {
+                int val1 = stack.pop();
+                int val2 = stack.peek();
 
----
+                stack.push(val1);
+                stack.push(val1 + val2);
+            }
+            else if (str.equals("D")) {
+                stack.push(2 * stack.peek());
+            }
+            else if (str.equals("C")) {
+                stack.pop();
+            }
+            else {
+                stack.push(Integer.parseInt(str));
+            }
+        }
+
+        int sum = 0;
+
+        while (!stack.isEmpty()) {
+            sum += stack.pop();
+        }
+
+        return sum;
+    }
+}
+```
 
 ## Pattern Learned
 
-> **Whenever a problem requires repeatedly accessing, removing, or updating the most recent elements, think of using a Stack.**
+> Whenever a problem requires repeatedly accessing, removing, or updating the **most recent element(s)**, a **Stack** is often the most suitable data structure.
 
-Common Stack operations:
+Typical stack-based operations include:
 
-* Previous element
-* Undo operation
-* Remove last
-* Double last
-* Sum of last two
+- Undo the last action
+- Remove the most recent element
+- Access the latest element
+- Double the latest value
+- Compute using the last two values
+- Maintain a history of operations
