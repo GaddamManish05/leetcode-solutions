@@ -1,49 +1,168 @@
-<h2><a href="https://leetcode.com/problems/find-pivot-index">724. Find Pivot Index</a></h2><h3>Easy</h3><hr><p>Given an array of integers <code>nums</code>, calculate the <strong>pivot index</strong> of this array.</p>
+# 724. Find Pivot Index
 
-<p>The <strong>pivot index</strong> is the index where the sum of all the numbers <strong>strictly</strong> to the left of the index is equal to the sum of all the numbers <strong>strictly</strong> to the index&#39;s right.</p>
+## Approach: Prefix Sum Arrays (Left Sum & Right Sum)
 
-<p>If the index is on the left edge of the array, then the left sum is <code>0</code> because there are no elements to the left. This also applies to the right edge of the array.</p>
+### Intuition
 
-<p>Return <em>the <strong>leftmost pivot index</strong></em>. If no such index exists, return <code>-1</code>.</p>
+The pivot index is the position where the sum of all elements to the left is equal to the sum of all elements to the right.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Instead of calculating the left and right sums for every index repeatedly, we precompute them using two prefix sum arrays:
 
-<pre>
-<strong>Input:</strong> nums = [1,7,3,6,5,6]
-<strong>Output:</strong> 3
-<strong>Explanation:</strong>
-The pivot index is 3.
-Left sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11
-Right sum = nums[4] + nums[5] = 5 + 6 = 11
-</pre>
+- `leftSum[i]` stores the sum of elements from index `0` to `i`.
+- `rightSum[i]` stores the sum of elements from index `i` to `n-1`.
 
-<p><strong class="example">Example 2:</strong></p>
+Since both arrays include `nums[i]`, comparing them directly works because the current element is present on both sides and effectively cancels out.
 
-<pre>
-<strong>Input:</strong> nums = [1,2,3]
-<strong>Output:</strong> -1
-<strong>Explanation:</strong>
-There is no index that satisfies the conditions in the problem statement.</pre>
+---
 
-<p><strong class="example">Example 3:</strong></p>
+## Algorithm
 
-<pre>
-<strong>Input:</strong> nums = [2,1,-1]
-<strong>Output:</strong> 0
-<strong>Explanation:</strong>
-The pivot index is 0.
-Left sum = 0 (no elements to the left of index 0)
-Right sum = nums[1] + nums[2] = 1 + -1 = 0
-</pre>
+1. Create two arrays:
+   - `leftSum[]`
+   - `rightSum[]`
+2. Traverse from left to right to build `leftSum`.
+3. Traverse from right to left to build `rightSum`.
+4. Traverse the array once more:
+   - If `leftSum[i] == rightSum[i]`, return `i`.
+5. If no such index exists, return `-1`.
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+---
 
-<ul>
-	<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
-	<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
-</ul>
+## Dry Run
 
-<p>&nbsp;</p>
-<p><strong>Note:</strong> This question is the same as&nbsp;1991:&nbsp;<a href="https://leetcode.com/problems/find-the-middle-index-in-array/" target="_blank">https://leetcode.com/problems/find-the-middle-index-in-array/</a></p>
+### Input
+
+```
+nums = [1, 7, 3, 6, 5, 6]
+```
+
+### Step 1: Build `leftSum`
+
+| Index | Running Sum | leftSum |
+|------:|------------:|---------:|
+| 0 | 1 | 1 |
+| 1 | 8 | 8 |
+| 2 | 11 | 11 |
+| 3 | 17 | 17 |
+| 4 | 22 | 22 |
+| 5 | 28 | 28 |
+
+```
+leftSum = [1, 8, 11, 17, 22, 28]
+```
+
+---
+
+### Step 2: Build `rightSum`
+
+| Index | Running Sum | rightSum |
+|------:|------------:|----------:|
+| 5 | 6 | 6 |
+| 4 | 11 | 11 |
+| 3 | 17 | 17 |
+| 2 | 20 | 20 |
+| 1 | 27 | 27 |
+| 0 | 28 | 28 |
+
+```
+rightSum = [28, 27, 20, 17, 11, 6]
+```
+
+---
+
+### Step 3: Compare Both Arrays
+
+| Index | leftSum | rightSum | Result |
+|------:|---------:|----------:|:------:|
+| 0 | 1 | 28 | ❌ |
+| 1 | 8 | 27 | ❌ |
+| 2 | 11 | 20 | ❌ |
+| 3 | 17 | 17 | ✅ Return 3 |
+
+---
+
+## Correctness
+
+For every index `i`:
+
+```
+leftSum[i] = nums[0] + nums[1] + ... + nums[i]
+```
+
+```
+rightSum[i] = nums[i] + nums[i+1] + ... + nums[n-1]
+```
+
+If
+
+```
+leftSum[i] == rightSum[i]
+```
+
+then
+
+```
+nums[0] + ... + nums[i]
+=
+nums[i] + ... + nums[n-1]
+```
+
+Subtracting `nums[i]` from both sides gives:
+
+```
+nums[0] + ... + nums[i-1]
+=
+nums[i+1] + ... + nums[n-1]
+```
+
+Thus, the sum of elements on the left equals the sum of elements on the right, so `i` is a valid pivot index.
+
+Since the array is checked from left to right, the first matching index is the leftmost pivot index.
+
+---
+
+## Complexity Analysis
+
+- **Time Complexity:** `O(n)`
+  - Build `leftSum`: `O(n)`
+  - Build `rightSum`: `O(n)`
+  - Compare both arrays: `O(n)`
+
+- **Space Complexity:** `O(n)`
+  - `leftSum[]`
+  - `rightSum[]`
+
+---
+
+## Java Code
+
+```java
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int[] leftSum = new int[nums.length];
+        int[] rightSum = new int[nums.length];
+
+        int sum = 0;
+
+        for (int i = 0; i < nums.length; ++i) {
+            sum += nums[i];
+            leftSum[i] = sum;
+        }
+
+        sum = 0;
+
+        for (int i = nums.length - 1; i >= 0; i--) {
+            sum += nums[i];
+            rightSum[i] = sum;
+        }
+
+        for (int i = 0; i < nums.length; ++i) {
+            if (leftSum[i] == rightSum[i]) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+}
+```
