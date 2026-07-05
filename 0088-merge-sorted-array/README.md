@@ -1,48 +1,177 @@
-<h2><a href="https://leetcode.com/problems/merge-sorted-array">88. Merge Sorted Array</a></h2><h3>Easy</h3><hr><p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in <strong>non-decreasing order</strong>, and two integers <code>m</code> and <code>n</code>, representing the number of elements in <code>nums1</code> and <code>nums2</code> respectively.</p>
+# 88. Merge Sorted Array
 
-<p><strong>Merge</strong> <code>nums1</code> and <code>nums2</code> into a single array sorted in <strong>non-decreasing order</strong>.</p>
+## Problem Statement
+You are given two sorted integer arrays `nums1` and `nums2` in non-decreasing order.
 
-<p>The final sorted array should not be returned by the function, but instead be <em>stored inside the array </em><code>nums1</code>. To accommodate this, <code>nums1</code> has a length of <code>m + n</code>, where the first <code>m</code> elements denote the elements that should be merged, and the last <code>n</code> elements are set to <code>0</code> and should be ignored. <code>nums2</code> has a length of <code>n</code>.</p>
+- `nums1` has a size of `m + n`.
+- The first `m` elements are valid.
+- The last `n` elements are extra space (`0`s) to accommodate elements from `nums2`.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Merge `nums2` into `nums1` so that the final array is sorted in non-decreasing order.
 
-<pre>
-<strong>Input:</strong> nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
-<strong>Output:</strong> [1,2,2,3,5,6]
-<strong>Explanation:</strong> The arrays we are merging are [1,2,3] and [2,5,6].
-The result of the merge is [<u>1</u>,<u>2</u>,2,<u>3</u>,5,6] with the underlined elements coming from nums1.
-</pre>
+---
 
-<p><strong class="example">Example 2:</strong></p>
+## Approach (Three Pointers from the End)
 
-<pre>
-<strong>Input:</strong> nums1 = [1], m = 1, nums2 = [], n = 0
-<strong>Output:</strong> [1]
-<strong>Explanation:</strong> The arrays we are merging are [1] and [].
-The result of the merge is [1].
-</pre>
+Since `nums1` already has enough space at the end, instead of shifting elements to the right, we start filling the array **from the last index**.
 
-<p><strong class="example">Example 3:</strong></p>
+We use three pointers:
 
-<pre>
-<strong>Input:</strong> nums1 = [0], m = 0, nums2 = [1], n = 1
-<strong>Output:</strong> [1]
-<strong>Explanation:</strong> The arrays we are merging are [] and [1].
-The result of the merge is [1].
-Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
-</pre>
+- `i` → Last valid element in `nums1` (`m - 1`)
+- `j` → Last element in `nums2` (`n - 1`)
+- `k` → Last position of `nums1` (`m + n - 1`)
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+### Algorithm
 
-<ul>
-	<li><code>nums1.length == m + n</code></li>
-	<li><code>nums2.length == n</code></li>
-	<li><code>0 &lt;= m, n &lt;= 200</code></li>
-	<li><code>1 &lt;= m + n &lt;= 200</code></li>
-	<li><code>-10<sup>9</sup> &lt;= nums1[i], nums2[j] &lt;= 10<sup>9</sup></code></li>
-</ul>
+1. Initialize three pointers:
+   - `i = m - 1`
+   - `j = n - 1`
+   - `k = m + n - 1`
 
-<p>&nbsp;</p>
-<p><strong>Follow up: </strong>Can you come up with an algorithm that runs in <code>O(m + n)</code> time?</p>
+2. Compare `nums1[i]` and `nums2[j]`.
+   - If `nums1[i] > nums2[j]`, place `nums1[i]` at `nums1[k]`.
+   - Otherwise, place `nums2[j]` at `nums1[k]`.
+
+3. Move the corresponding pointer and decrement `k`.
+
+4. Continue until either array is exhausted.
+
+5. If elements remain in `nums2`, copy them into `nums1`.
+
+6. If elements remain in `nums1`, they are already in their correct positions (copying them also works, as done in this implementation).
+
+---
+
+## Dry Run
+
+### Input
+
+```text
+nums1 = [1,2,3,0,0,0]
+m = 3
+
+nums2 = [2,5,6]
+n = 3
+```
+
+Initial pointers:
+
+```text
+i = 2 (3)
+j = 2 (6)
+k = 5
+```
+
+### Step 1
+
+```text
+3 < 6
+
+nums1 = [1,2,3,0,0,6]
+
+j--
+k--
+```
+
+### Step 2
+
+```text
+3 < 5
+
+nums1 = [1,2,3,0,5,6]
+
+j--
+k--
+```
+
+### Step 3
+
+```text
+3 > 2
+
+nums1 = [1,2,3,3,5,6]
+
+i--
+k--
+```
+
+### Step 4
+
+```text
+2 == 2
+
+nums1 = [1,2,2,3,5,6]
+
+j--
+k--
+```
+
+Now `j < 0`, so the remaining elements in `nums1` are already in place.
+
+Final Output:
+
+```text
+[1,2,2,3,5,6]
+```
+
+---
+
+## Correctness
+
+- The largest remaining element is always placed at the end (`k`).
+- Since both arrays are already sorted, comparing the last elements guarantees the correct placement.
+- Working backwards avoids overwriting the valid elements already present in `nums1`.
+
+---
+
+## Complexity Analysis
+
+### Time Complexity
+
+- Each element is processed exactly once.
+
+**O(m + n)**
+
+### Space Complexity
+
+- No extra data structure is used.
+
+**O(1)**
+
+---
+
+## Java Solution
+
+```java
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] < nums2[j]) {
+                nums1[k] = nums2[j];
+                j--;
+            } else {
+                nums1[k] = nums1[i];
+                i--;
+            }
+            k--;
+        }
+
+        while (i >= 0) {
+            nums1[k] = nums1[i];
+            i--;
+            k--;
+        }
+
+        while (j >= 0) {
+            nums1[k] = nums2[j];
+            j--;
+            k--;
+        }
+    }
+}
+```
