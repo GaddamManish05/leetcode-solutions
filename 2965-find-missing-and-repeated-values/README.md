@@ -1,31 +1,120 @@
-<h2><a href="https://leetcode.com/problems/find-missing-and-repeated-values">3227. Find Missing and Repeated Values</a></h2><h3>Easy</h3><hr><p>You are given a <strong>0-indexed</strong> 2D integer matrix <code><font face="monospace">grid</font></code> of size <code>n * n</code> with values in the range <code>[1, n<sup>2</sup>]</code>. Each integer appears <strong>exactly once</strong> except <code>a</code> which appears <strong>twice</strong> and <code>b</code> which is <strong>missing</strong>. The task is to find the repeating and missing numbers <code>a</code> and <code>b</code>.</p>
+# 3227. Find Missing and Repeated Values (Easy)
 
-<p>Return <em>a <strong>0-indexed </strong>integer array </em><code>ans</code><em> of size </em><code>2</code><em> where </em><code>ans[0]</code><em> equals to </em><code>a</code><em> and </em><code>ans[1]</code><em> equals to </em><code>b</code><em>.</em></p>
+## Idea
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+* Traverse the `n × n` grid.
+* Store the frequency of each number in a `HashMap`.
+* The number with frequency `2` is the **repeated** number.
+* The number that does not exist in the map is the **missing** number.
 
-<pre>
-<strong>Input:</strong> grid = [[1,3],[2,2]]
-<strong>Output:</strong> [2,4]
-<strong>Explanation:</strong> Number 2 is repeated and number 4 is missing so the answer is [2,4].
-</pre>
+---
 
-<p><strong class="example">Example 2:</strong></p>
+## Steps
 
-<pre>
-<strong>Input:</strong> grid = [[9,1,7],[8,9,2],[3,4,6]]
-<strong>Output:</strong> [9,5]
-<strong>Explanation:</strong> Number 9 is repeated and number 5 is missing so the answer is [9,5].
-</pre>
+1. Create a `HashMap<Integer, Integer>` to store frequencies.
+2. Traverse the matrix and update the frequency of every element.
+3. Iterate through the map:
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+   * Frequency > 1 → Repeated number.
+4. Iterate from `1` to `n²`:
 
-<ul>
-	<li><code>2 &lt;= n == grid.length == grid[i].length &lt;= 50</code></li>
-	<li><code>1 &lt;= grid[i][j] &lt;= n * n</code></li>
-	<li>For all <code>x</code> that <code>1 &lt;= x &lt;= n * n</code> there is exactly one <code>x</code> that is not equal to any of the grid members.</li>
-	<li>For all <code>x</code> that <code>1 &lt;= x &lt;= n * n</code> there is exactly one <code>x</code> that is equal to exactly two of the grid members.</li>
-	<li>For all <code>x</code> that <code>1 &lt;= x &lt;= n * n</code> except two of them there is exactly one pair of <code>i, j</code> that <code>0 &lt;= i, j &lt;= n - 1</code> and <code>grid[i][j] == x</code>.</li>
-</ul>
+   * Number not present in the map → Missing number.
+5. Return `{repeated, missing}`.
+
+---
+
+## Code
+
+```java
+class Solution {
+    public int[] findMissingAndRepeatedValues(int[][] grid) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        int n = grid.length;
+
+        // Count frequency
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                map.put(grid[i][j], map.getOrDefault(grid[i][j], 0) + 1);
+            }
+        }
+
+        int repeated = -1;
+        int missing = -1;
+
+        // Find repeated number
+        for (int key : map.keySet()) {
+            if (map.get(key) == 2) {
+                repeated = key;
+                break;
+            }
+        }
+
+        // Find missing number
+        for (int i = 1; i <= n * n; i++) {
+            if (!map.containsKey(i)) {
+                missing = i;
+                break;
+            }
+        }
+
+        return new int[]{repeated, missing};
+    }
+}
+```
+
+---
+
+## Complexity
+
+* **Time:** `O(n²)`
+
+  * Traverse matrix → `O(n²)`
+  * Traverse map → `O(n²)` (at most `n²` keys)
+  * Check numbers from `1` to `n²` → `O(n²)`
+
+* **Space:** `O(n²)`
+
+  * HashMap stores frequencies of up to `n²` numbers.
+
+---
+
+## Key Java Methods
+
+```java
+map.put(num, map.getOrDefault(num, 0) + 1); // Count frequency
+
+map.containsKey(x); // Check if number exists
+
+map.keySet(); // Iterate through all keys
+```
+
+---
+
+## Important Mistake I Made
+
+❌ I used:
+
+```java
+for (int i = 1; i < max * max; i++)
+```
+
+This is incorrect because `max` is the largest value **present** in the grid, not necessarily `n`.
+
+✅ Correct:
+
+```java
+int n = grid.length;
+
+for (int i = 1; i <= n * n; i++) {
+    ...
+}
+```
+
+Always iterate from **1 to `n²`**, since the numbers are guaranteed to lie in that range.
+
+---
+
+## Revision Keywords
+
+**HashMap → Frequency Count → Repeated = Frequency 2 → Missing = Not Present → Return `{Repeated, Missing}`**
