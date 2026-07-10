@@ -7,6 +7,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0045-jump-game-ii](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0055-jump-game) |
 | [0169-majority-element](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0169-majority-element) |
+| [0238-product-of-array-except-self](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0238-product-of-array-except-self) |
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
 | [0724-find-pivot-index](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0724-find-pivot-index) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
@@ -14,6 +15,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Prefix Sum
 |  |
 | ------- |
+| [0238-product-of-array-except-self](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0238-product-of-array-except-self) |
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
 | [0724-find-pivot-index](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0724-find-pivot-index) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
