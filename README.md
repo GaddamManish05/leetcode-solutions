@@ -10,6 +10,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0238-product-of-array-except-self](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0238-product-of-array-except-self) |
 | [0303-range-sum-query-immutable](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0303-range-sum-query-immutable) |
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
+| [0525-contiguous-array](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0525-contiguous-array) |
 | [0724-find-pivot-index](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0724-find-pivot-index) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [1314-matrix-block-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1314-matrix-block-sum) |
@@ -21,6 +22,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0238-product-of-array-except-self](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0238-product-of-array-except-self) |
 | [0303-range-sum-query-immutable](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0303-range-sum-query-immutable) |
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
+| [0525-contiguous-array](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0525-contiguous-array) |
 | [0724-find-pivot-index](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0724-find-pivot-index) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [1314-matrix-block-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1314-matrix-block-sum) |
@@ -31,6 +33,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0017-letter-combinations-of-a-phone-number](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0017-letter-combinations-of-a-phone-number) |
 | [0169-majority-element](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0169-majority-element) |
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
+| [0525-contiguous-array](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0525-contiguous-array) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
 | [2965-find-missing-and-repeated-values](https://github.com/GaddamManish05/leetcode-solutions/tree/master/2965-find-missing-and-repeated-values) |
