@@ -12,6 +12,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
 | [0525-contiguous-array](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0525-contiguous-array) |
 | [0724-find-pivot-index](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0724-find-pivot-index) |
+| [0848-shifting-letters](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0848-shifting-letters) |
 | [0930-binary-subarrays-with-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0930-binary-subarrays-with-sum) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [1314-matrix-block-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1314-matrix-block-sum) |
@@ -25,6 +26,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
 | [0525-contiguous-array](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0525-contiguous-array) |
 | [0724-find-pivot-index](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0724-find-pivot-index) |
+| [0848-shifting-letters](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0848-shifting-letters) |
 | [0930-binary-subarrays-with-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0930-binary-subarrays-with-sum) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [1314-matrix-block-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1314-matrix-block-sum) |
@@ -60,6 +62,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0017-letter-combinations-of-a-phone-number) |
 | [0020-valid-parentheses](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0020-valid-parentheses) |
+| [0848-shifting-letters](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0848-shifting-letters) |
 ## Backtracking
 |  |
 | ------- |
