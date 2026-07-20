@@ -20,6 +20,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1314-matrix-block-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1314-matrix-block-sum) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
 | [2965-find-missing-and-repeated-values](https://github.com/GaddamManish05/leetcode-solutions/tree/master/2965-find-missing-and-repeated-values) |
+| [3028-ant-on-the-boundary](https://github.com/GaddamManish05/leetcode-solutions/tree/master/3028-ant-on-the-boundary) |
 ## Prefix Sum
 |  |
 | ------- |
@@ -33,6 +34,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [1314-matrix-block-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1314-matrix-block-sum) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
+| [3028-ant-on-the-boundary](https://github.com/GaddamManish05/leetcode-solutions/tree/master/3028-ant-on-the-boundary) |
 ## Hash Table
 |  |
 | ------- |
@@ -125,4 +127,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0042-trapping-rain-water) |
+## Simulation
+|  |
+| ------- |
+| [3028-ant-on-the-boundary](https://github.com/GaddamManish05/leetcode-solutions/tree/master/3028-ant-on-the-boundary) |
 <!---LeetCode Topics End-->
