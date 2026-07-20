@@ -5,6 +5,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0001-two-sum) |
+| [0042-trapping-rain-water](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0042-trapping-rain-water) |
 | [0045-jump-game-ii](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0055-jump-game) |
 | [0169-majority-element](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0169-majority-element) |
@@ -54,6 +55,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Dynamic Programming
 |  |
 | ------- |
+| [0042-trapping-rain-water](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0042-trapping-rain-water) |
 | [0045-jump-game-ii](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0055-jump-game) |
 | [0062-unique-paths](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0062-unique-paths) |
@@ -106,6 +108,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0020-valid-parentheses) |
+| [0042-trapping-rain-water](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0042-trapping-rain-water) |
 ## Number Theory
 |  |
 | ------- |
@@ -114,4 +117,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0062-unique-paths](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0062-unique-paths) |
+## Two Pointers
+|  |
+| ------- |
+| [0042-trapping-rain-water](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0042-trapping-rain-water) |
+## Monotonic Stack
+|  |
+| ------- |
+| [0042-trapping-rain-water](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0042-trapping-rain-water) |
 <!---LeetCode Topics End-->
