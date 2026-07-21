@@ -18,6 +18,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0930-binary-subarrays-with-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0930-binary-subarrays-with-sum) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [1314-matrix-block-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1314-matrix-block-sum) |
+| [1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
 | [2965-find-missing-and-repeated-values](https://github.com/GaddamManish05/leetcode-solutions/tree/master/2965-find-missing-and-repeated-values) |
 | [3028-ant-on-the-boundary](https://github.com/GaddamManish05/leetcode-solutions/tree/master/3028-ant-on-the-boundary) |
@@ -34,6 +35,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [1314-matrix-block-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1314-matrix-block-sum) |
 | [1525-number-of-good-ways-to-split-a-string](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1525-number-of-good-ways-to-split-a-string) |
+| [1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
 | [3028-ant-on-the-boundary](https://github.com/GaddamManish05/leetcode-solutions/tree/master/3028-ant-on-the-boundary) |
 ## Hash Table
@@ -47,6 +49,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0930-binary-subarrays-with-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0930-binary-subarrays-with-sum) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
 | [1525-number-of-good-ways-to-split-a-string](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1525-number-of-good-ways-to-split-a-string) |
+| [1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
 | [2965-find-missing-and-repeated-values](https://github.com/GaddamManish05/leetcode-solutions/tree/master/2965-find-missing-and-repeated-values) |
 ## Math
@@ -69,6 +72,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0045-jump-game-ii](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0055-jump-game) |
+| [1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target) |
 ## String
 |  |
 | ------- |
