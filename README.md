@@ -83,6 +83,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0017-letter-combinations-of-a-phone-number](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0017-letter-combinations-of-a-phone-number) |
 | [0020-valid-parentheses](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0020-valid-parentheses) |
+| [0344-reverse-string](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0344-reverse-string) |
 | [0848-shifting-letters](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0848-shifting-letters) |
 | [1525-number-of-good-ways-to-split-a-string](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1525-number-of-good-ways-to-split-a-string) |
 ## Backtracking
@@ -137,6 +138,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0042-trapping-rain-water](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0042-trapping-rain-water) |
+| [0344-reverse-string](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0344-reverse-string) |
 ## Monotonic Stack
 |  |
 | ------- |
