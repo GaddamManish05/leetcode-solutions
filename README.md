@@ -10,6 +10,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0055-jump-game](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0055-jump-game) |
 | [0169-majority-element](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0169-majority-element) |
 | [0238-product-of-array-except-self](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0238-product-of-array-except-self) |
+| [0239-sliding-window-maximum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0239-sliding-window-maximum) |
 | [0303-range-sum-query-immutable](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0303-range-sum-query-immutable) |
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
 | [0525-contiguous-array](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0525-contiguous-array) |
@@ -116,6 +117,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Sliding Window
 |  |
 | ------- |
+| [0239-sliding-window-maximum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0239-sliding-window-maximum) |
 | [0930-binary-subarrays-with-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0930-binary-subarrays-with-sum) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
 ## Stack
@@ -147,4 +149,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1525-number-of-good-ways-to-split-a-string](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1525-number-of-good-ways-to-split-a-string) |
+## Queue
+|  |
+| ------- |
+| [0239-sliding-window-maximum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0239-sliding-window-maximum) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0239-sliding-window-maximum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0239-sliding-window-maximum) |
+## Monotonic Queue
+|  |
+| ------- |
+| [0239-sliding-window-maximum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0239-sliding-window-maximum) |
 <!---LeetCode Topics End-->
