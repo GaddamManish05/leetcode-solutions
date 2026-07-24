@@ -77,6 +77,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0045-jump-game-ii](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0055-jump-game) |
+| [0680-valid-palindrome-ii](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0680-valid-palindrome-ii) |
 | [1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target) |
 ## String
 |  |
@@ -85,6 +86,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0020-valid-parentheses](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0020-valid-parentheses) |
 | [0125-valid-palindrome](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0125-valid-palindrome) |
 | [0344-reverse-string](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0344-reverse-string) |
+| [0680-valid-palindrome-ii](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0680-valid-palindrome-ii) |
 | [0848-shifting-letters](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0848-shifting-letters) |
 | [1525-number-of-good-ways-to-split-a-string](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1525-number-of-good-ways-to-split-a-string) |
 ## Backtracking
@@ -141,6 +143,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0042-trapping-rain-water](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0042-trapping-rain-water) |
 | [0125-valid-palindrome](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0125-valid-palindrome) |
 | [0344-reverse-string](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0344-reverse-string) |
+| [0680-valid-palindrome-ii](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0680-valid-palindrome-ii) |
 ## Monotonic Stack
 |  |
 | ------- |
