@@ -14,6 +14,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0303-range-sum-query-immutable](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0303-range-sum-query-immutable) |
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
 | [0525-contiguous-array](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0525-contiguous-array) |
+| [0628-maximum-product-of-three-numbers](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0628-maximum-product-of-three-numbers) |
 | [0724-find-pivot-index](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0724-find-pivot-index) |
 | [0848-shifting-letters](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0848-shifting-letters) |
 | [0930-binary-subarrays-with-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0930-binary-subarrays-with-sum) |
@@ -62,6 +63,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0062-unique-paths](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0062-unique-paths) |
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
+| [0628-maximum-product-of-three-numbers](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0628-maximum-product-of-three-numbers) |
 | [2965-find-missing-and-repeated-values](https://github.com/GaddamManish05/leetcode-solutions/tree/master/2965-find-missing-and-repeated-values) |
 | [3658-gcd-of-odd-and-even-sums](https://github.com/GaddamManish05/leetcode-solutions/tree/master/3658-gcd-of-odd-and-even-sums) |
 ## Dynamic Programming
@@ -103,6 +105,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0169-majority-element](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0169-majority-element) |
+| [0628-maximum-product-of-three-numbers](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0628-maximum-product-of-three-numbers) |
 ## Counting
 |  |
 | ------- |
