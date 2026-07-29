@@ -16,6 +16,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0525-contiguous-array](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0525-contiguous-array) |
 | [0628-maximum-product-of-three-numbers](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0628-maximum-product-of-three-numbers) |
 | [0724-find-pivot-index](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0724-find-pivot-index) |
+| [0735-asteroid-collision](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0735-asteroid-collision) |
 | [0848-shifting-letters](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0848-shifting-letters) |
 | [0930-binary-subarrays-with-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0930-binary-subarrays-with-sum) |
 | [0974-subarray-sums-divisible-by-k](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0974-subarray-sums-divisible-by-k) |
@@ -141,6 +142,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0020-valid-parentheses](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0020-valid-parentheses) |
 | [0042-trapping-rain-water](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0042-trapping-rain-water) |
+| [0735-asteroid-collision](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0735-asteroid-collision) |
 ## Number Theory
 |  |
 | ------- |
@@ -163,6 +165,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Simulation
 |  |
 | ------- |
+| [0735-asteroid-collision](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0735-asteroid-collision) |
 | [3028-ant-on-the-boundary](https://github.com/GaddamManish05/leetcode-solutions/tree/master/3028-ant-on-the-boundary) |
 ## Bit Manipulation
 |  |
