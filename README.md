@@ -13,6 +13,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0169-majority-element](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0169-majority-element) |
 | [0238-product-of-array-except-self](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0238-product-of-array-except-self) |
 | [0239-sliding-window-maximum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0239-sliding-window-maximum) |
+| [0300-longest-increasing-subsequence](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0300-longest-increasing-subsequence) |
 | [0303-range-sum-query-immutable](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0303-range-sum-query-immutable) |
 | [0523-continuous-subarray-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0523-continuous-subarray-sum) |
 | [0525-contiguous-array](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0525-contiguous-array) |
@@ -81,6 +82,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0045-jump-game-ii](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0055-jump-game) |
 | [0062-unique-paths](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0062-unique-paths) |
+| [0300-longest-increasing-subsequence](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0300-longest-increasing-subsequence) |
 | [1525-number-of-good-ways-to-split-a-string](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1525-number-of-good-ways-to-split-a-string) |
 | [3654-minimum-sum-after-divisible-sum-deletions](https://github.com/GaddamManish05/leetcode-solutions/tree/master/3654-minimum-sum-after-divisible-sum-deletions) |
 ## Greedy
@@ -134,6 +136,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0153-find-minimum-in-rotated-sorted-array](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0153-find-minimum-in-rotated-sorted-array) |
 | [0162-find-peak-element](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0162-find-peak-element) |
+| [0300-longest-increasing-subsequence](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0300-longest-increasing-subsequence) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
 ## Sliding Window
 |  |
@@ -191,4 +194,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0239-sliding-window-maximum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0239-sliding-window-maximum) |
+## Longest Increasing Subsequence
+|  |
+| ------- |
+| [0300-longest-increasing-subsequence](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0300-longest-increasing-subsequence) |
 <!---LeetCode Topics End-->
