@@ -29,6 +29,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1314-matrix-block-sum](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1314-matrix-block-sum) |
 | [1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1546-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
+| [1870-minimum-speed-to-arrive-on-time](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1870-minimum-speed-to-arrive-on-time) |
 | [2965-find-missing-and-repeated-values](https://github.com/GaddamManish05/leetcode-solutions/tree/master/2965-find-missing-and-repeated-values) |
 | [3028-ant-on-the-boundary](https://github.com/GaddamManish05/leetcode-solutions/tree/master/3028-ant-on-the-boundary) |
 | [3654-minimum-sum-after-divisible-sum-deletions](https://github.com/GaddamManish05/leetcode-solutions/tree/master/3654-minimum-sum-after-divisible-sum-deletions) |
@@ -144,6 +145,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0300-longest-increasing-subsequence](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0300-longest-increasing-subsequence) |
 | [1011-capacity-to-ship-packages-within-d-days](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1011-capacity-to-ship-packages-within-d-days) |
 | [1658-minimum-operations-to-reduce-x-to-zero](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1658-minimum-operations-to-reduce-x-to-zero) |
+| [1870-minimum-speed-to-arrive-on-time](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1870-minimum-speed-to-arrive-on-time) |
 ## Sliding Window
 |  |
 | ------- |
