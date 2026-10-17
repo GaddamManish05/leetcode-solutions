@@ -246,4 +246,5 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0197-rising-temperature](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0197-rising-temperature) |
 | [0577-employee-bonus](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0577-employee-bonus) |
 | [0595-big-countries](https://github.com/GaddamManish05/leetcode-solutions/tree/master/0595-big-countries) |
+| [1667-fix-names-in-a-table](https://github.com/GaddamManish05/leetcode-solutions/tree/master/1667-fix-names-in-a-table) |
 <!---LeetCode Topics End-->
